@@ -70,6 +70,17 @@ public class TextTable {
 
 	public String findRow(String findword){
 	    String row = "";
+	    TableRow array;
+    	for(int i = 0; i < counter; i++){
+    		array = table[i];
+    		String check =  array.getName();
+    		if (check.equals(findword)){
+    			row = "Number: " + array.getNumber() + " Name: " + check + " Score: " + array.getScore();
+    			break;
+    		}
+    		else{continue;}
+    	}
+
 	    return row;
     }
 
