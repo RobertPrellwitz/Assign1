@@ -64,7 +64,7 @@ public class Main {
                 break;
             case REMOVE_ROW:
                 int num = Integer.parseInt( JOptionPane
-                        .showInputDialog("Please enter the name in the row you want to remove from the table"));
+                        .showInputDialog("Please enter the number in the row you want to remove from the table"));
                 mytable.removeRow(num);
                 break;
             case FIND_ROW:
