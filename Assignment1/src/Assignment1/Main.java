@@ -21,7 +21,7 @@ public class Main {
             + "You can add new rows or remove rows from tables.\n"
             + "You can also load a table from a file or save a current\n"
             + "table to a file.\n";
-            
+
     Static final String developerMessage = "Program enhanced and improved by:\n"
             + "Robert Prellwitz\n"
             + "APC 390 Fall 21 Semester\n"
@@ -38,6 +38,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         JOptionPane.showMessageDialog(null, welcomeMessage);
+        JOptionPane.showMessageDialog("Program Developer",developerMessage);
         TextTable mytexttable = new TextTable();
 
         int userSelection = 0;
