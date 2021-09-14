@@ -14,12 +14,13 @@ public class TextTable {
 
 
 	public void loadTableFromFile(String fileName) throws IOException  {
-		Scanner loadFile = new Scanner (new FileReader(fileName));
+		Scanner loadFile = new Scanner (new FileReader("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\data\\" +fileName));
 		String input ;
 		header = loadFile.nextLine();
 		while (loadFile.hasNext()){
 			input = loadFile.nextLine();
 			String[] array = input.split("\t", 3);
+			//String[] array = input.split(" ",3);
 			table[counter]= new TableRow(array[0],array[1],array[2]);
 			counter++;
 		}
@@ -27,7 +28,7 @@ public class TextTable {
 	}
 
 	public void saveTableToFile(String fileName) throws FileNotFoundException {
-	PrintWriter fileOutput = new PrintWriter(fileName);
+	PrintWriter fileOutput = new PrintWriter("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName);
 	String number, name, score;
 	TableRow array ;
 
