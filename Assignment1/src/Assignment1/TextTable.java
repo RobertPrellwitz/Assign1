@@ -1,9 +1,6 @@
 package Assignment1;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 
@@ -18,6 +15,7 @@ public class TextTable {
 		Scanner loadFile = null;  //// = new Scanner(new FileReader());
 
 		loadFile =new Scanner(new FileReader("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\data\\" +fileName));
+		//// loadFile = new Scanner(new FileReader(fileName));
 		String input ;
 		header = loadFile.nextLine();
 		while (loadFile.hasNext()) {
@@ -31,7 +29,11 @@ public class TextTable {
 	}
 
 	public void saveTableToFile(String fileName) throws FileNotFoundException {
-	PrintWriter fileOutput = new PrintWriter("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName);
+	////PrintWriter fileOutput = new PrintWriter("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName);
+		String path = new File("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName).toString();
+		System.out.println("\\src\\"+path);
+	PrintWriter fileOutput = new PrintWriter(fileName);
+
 	String number, name, score;
 	TableRow array ;
 	fileOutput.println(header);
