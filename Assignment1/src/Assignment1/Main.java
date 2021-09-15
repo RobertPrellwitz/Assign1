@@ -37,8 +37,8 @@ public class Main {
             + "   " + QUIT + ": Quit\n";
 
     public static void main(String[] args) throws IOException {
-        JOptionPane.showMessageDialog(null, welcomeMessage);
         JOptionPane.showMessageDialog(null,developerMessage);
+        JOptionPane.showMessageDialog(null, welcomeMessage);
         TextTable mytexttable = new TextTable();
 
         int userSelection = 0;
@@ -57,7 +57,11 @@ public class Main {
                 // using the "fileName" src/a1/input.txt
                 String fileName = JOptionPane.showInputDialog("Please enter the name of the text file to load");
                 System.out.println("Opening the file '" + fileName + "'.");
-                mytable.loadTableFromFile(fileName);
+                try {
+                mytable.loadTableFromFile(fileName);}
+                catch(IOException exp){
+                    JOptionPane.showMessageDialog(null,"Error loading file: "+exp);
+                }
                 break;
             case SAVE:
                 fileName = JOptionPane.showInputDialog("Please enter the name of the text file to which to save");

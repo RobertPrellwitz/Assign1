@@ -1,0 +1,10 @@
+Robs sample data for assignment 1		
+7	Bond	1965
+44	Hamilton	124
+10	Dixon	7
+13	Prell	1971
+14	Kelley	1974
+21	Reno	1972
+		
+18	Elliot	1989
+55	Ricciardio	1995

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.swing.JOptionPane;
 import java.util.Scanner;
 
 public class TextTable {
@@ -14,14 +15,16 @@ public class TextTable {
 
 
 	public void loadTableFromFile(String fileName) throws IOException  {
-		Scanner loadFile = new Scanner (new FileReader("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\data\\" +fileName));
+		Scanner loadFile = null;  //// = new Scanner(new FileReader());
+
+		loadFile =new Scanner(new FileReader("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\data\\" +fileName));
 		String input ;
 		header = loadFile.nextLine();
-		while (loadFile.hasNext()){
+		while (loadFile.hasNext()) {
 			input = loadFile.nextLine();
 			String[] array = input.split("\t", 3);
 			//String[] array = input.split(" ",3);
-			table[counter]= new TableRow(array[0],array[1],array[2]);
+			table[counter] = new TableRow(array[0], array[1], array[2]);
 			counter++;
 		}
 		loadFile.close();
@@ -31,6 +34,8 @@ public class TextTable {
 	PrintWriter fileOutput = new PrintWriter("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName);
 	String number, name, score;
 	TableRow array ;
+	fileOutput.println(header);
+	fileOutput.println("------------------------------------------------");
 
 	for (int i =0; i < counter; i++){
 		String test = table[i].toString();
