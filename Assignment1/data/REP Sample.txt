@@ -1,0 +1,8 @@
+REP Sample Data for File Read/Write
+01	Tammy	78.5
+007	Bond	99.1
+43	Peter	79
+
+13	Rob	90
+99	homer	001
+
