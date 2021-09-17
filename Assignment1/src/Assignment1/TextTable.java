@@ -12,17 +12,17 @@ public class TextTable {
 
 
 	public void loadTableFromFile(String fileName) throws IOException  {
-		Scanner loadFile = null;  //// = new Scanner(new FileReader());
-
-		/// loadFile =new Scanner(new FileReader("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\data\\" +fileName));
-		/// loadFile = new Scanner(new FileReader("data/" +fileName));
-		loadFile = new Scanner(new FileReader(fileName));
+		
+		Scanner loadFile = null; loadFile = new Scanner(new FileReader(fileName));
 		String input ;
 		header = loadFile.nextLine();
-		while (loadFile.hasNext()) {
+		while (loadFile.hasNext()) 
+		{
 			input = loadFile.nextLine();
 			boolean isEmpty = (input == null || input.trim().isEmpty());
-			if(!isEmpty){
+			
+			if(!isEmpty)
+			{
 			String[] array = input.split("\t", 3);
 			//String[] array = input.split(" ",3);
 			table[counter] = new TableRow(array[0], array[1], array[2]);
@@ -33,9 +33,6 @@ public class TextTable {
 	}
 
 	public void saveTableToFile(String fileName) throws FileNotFoundException {
-	////PrintWriter fileOutput = new PrintWriter("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName);
-	///	String path = new File("C:\\Users\\rprel\\APC 390\\Assignment1\\Assignment1\\output\\" + fileName).toString();
-	///	System.out.println("\\src\\"+path);
 	
 	PrintWriter fileOutput = new PrintWriter(fileName);
 
@@ -44,7 +41,8 @@ public class TextTable {
 	fileOutput.println(header);
 	fileOutput.println("------------------------------------------------");
 
-	for (int i =0; i < counter; i++){
+	for (int i =0; i < counter; i++)
+	{
 		String test = table[i].toString();
 		 array = table[i];;
 		 number = array.getNumber();
@@ -57,12 +55,14 @@ public class TextTable {
 	fileOutput.close();
 	}
 
-	public void addRow(String int1, String nameToAddtoTable, String item3){
+	public void addRow(String int1, String nameToAddtoTable, String item3)
+	{
 		table[counter]= new TableRow(int1,nameToAddtoTable,item3);
 			counter++;
 	}
 
-	public void removeRow(int numberToRemoveFromTable){
+	public void removeRow(int numberToRemoveFromTable)
+	{
 		TableRow array;
 		int temp = -1;
 		int number;
@@ -81,7 +81,8 @@ public class TextTable {
 	counter--;
 	}
 
-	public String findRow(String findword){
+	public String findRow(String findword)
+	{
 	    String row = "";
 	    TableRow array;
     	for(int i = 0; i < counter; i++){
