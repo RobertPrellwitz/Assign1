@@ -5,15 +5,10 @@ public class TableRow {
 	private String [] tableRow = new String [3] ;
 	
 
-	TableRow(String number, String name, String score){
+	 TableRow(String number, String name, String score){
 		tableRow[0] = number;
 		tableRow[1] = name;
 		tableRow[2] = score;
-	}
-	TableRow(){
-		tableRow[0]="";
-		tableRow[1]="";
-		tableRow[2]="";
 	}
 	protected String getNumber (){
 		String number = tableRow[0];
@@ -28,5 +23,10 @@ public class TableRow {
 	protected String getScore(){
 		String score = tableRow[2];
 		return score;
+	}
+
+	protected  String getData(int i){
+		String element = tableRow[i];
+		return element;
 	}
 }

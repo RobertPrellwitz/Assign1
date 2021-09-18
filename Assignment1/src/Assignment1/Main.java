@@ -74,8 +74,9 @@ public class Main {
                 mytable.addRow(number, name, value);
                 break;
             case REMOVE_ROW:
+                String Table = TextTable.displayData();
                 int num = Integer.parseInt( JOptionPane
-                        .showInputDialog("Please enter the number in the row you want to remove from the table"));
+                        .showInputDialog("Please enter the number in the row you want to remove from the table\n\n" + Table));
                 mytable.removeRow(num);
                 break;
             case FIND_ROW:
